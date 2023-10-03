@@ -1,0 +1,320 @@
+/* Quiz.css */
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  background-image: url('../img.jpg');
+  padding: 20px;
+  position: relative;
+}
+
+.quiz-title {
+  text-align: center;
+  color: black;
+  font-size: 24px;
+  box-sizing: border-box;
+}
+
+/* Style the timer with a background color */
+.timer {
+  font-size: 20px;
+  color: red;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  background-color: #f8f8f8; /* Light gray background */
+  padding: 4px;
+  padding-bottom: 0px;
+  border-radius: 5px; /* Rounded corners */
+  display: inline-block; /* Prevents text from stretching */
+}
+
+
+h3 {
+  font-size: 22px;
+}
+
+.question-box {
+  background-color: #ceeae4;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 650px;
+  height: 250px;
+  width: 100%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 15px;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
+.overview-panel {
+  background-color: #d8efea;
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-width: 210px;
+  width: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0;
+  bottom: 0;
+}
+
+.overview-indication {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.blue-box {
+  width: 20px;
+  height: 20px;
+  background-color: blue;
+  margin-right: 5px;
+}
+
+.green-box {
+  width: 20px;
+  height: 20px;
+  background-color: green;
+  margin-right: 5px;
+}
+
+/* Question number buttons styles */
+.question-button {
+  background-color: rgb(198, 196, 196);
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 0 4px;
+}
+
+.question-buttons-container {
+  display: flex;
+  /* Use Flexbox for horizontal layout */
+  flex-wrap: wrap;
+  
+  list-style-type: none;
+  /* Remove default list styling */
+  padding: 0;
+  /* Remove padding */
+}
+
+/* Style for the current question button */
+.current-question-button {
+  background-color: blue;
+  /* Blue color for the current question */
+  color: #ffffff;
+}
+
+/* Style for the attempted question button */
+.attempted-question-button {
+  background-color: green;
+  /* Green color for attempted questions */
+  color: white;
+}
+
+.previous-button,
+.next-button {
+  background-color: #007bff;
+  /* Blue color */
+  color: #fff;
+  /* White text color */
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  /* Increase padding for larger buttons */
+  margin-right: 10px;
+  /* Add spacing between buttons */
+  font-size: 16px;
+  /* Increase font size */
+  cursor: pointer;
+}
+
+/* Style the next button */
+.next-button {
+  background-color: #28a745;
+  /* Green color for next button */
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black background */
+  z-index: 9999;
+  /* Ensure it's above other elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #3498db;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Highlight the selected answer */
+ul li label input:checked {
+  background-color: #28a745; /* Green color for selected answer */
+  color: #fff; /* White text color */
+}
+
+
+/* Styles for screens smaller than 768px wide (e.g., smartphones) */
+@media (max-width: 768px) {
+  .quiz-title {
+    font-size: 20px;
+  }
+
+  .quiz-container {
+    padding: 10px;
+    /* Adjust padding for smaller screens */
+  }
+
+  .timer {
+    margin-left: 0;
+    /* Center timer text for smaller screens */
+  }
+
+  .question-box {
+    max-height: 300px;
+    /* Limit the height of the question box for better visibility */
+    padding: 10px;
+    /* Adjust padding for smaller screens */
+  }
+
+  .overview-panel {
+    max-height: none;
+    /* Allow the question overview panel to take its natural height */
+    position: static;
+    /* Remove absolute positioning */
+    margin-top: 20px;
+    /* Add margin to separate the overview panel from questions */
+    border-radius: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+  .overview-panel {
+    max-width: 300px;
+    /* Limit the maximum width of the overview panel */
+    margin-top: 20px;
+    /* Remove top margin to align with the question box */
+    position: relative;
+    /* Restore absolute positioning */
+    border-radius: 10px;
+    /* Adjust right positioning for medium-sized screens */
+
+    /* Adjust top positioning for medium-sized screens */
+  }
+}
+
+/* Styles for screens between 768px and 1200px wide (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .timer {
+    margin-left: auto;
+    /* Center the timer horizontally */
+    margin-right: auto;
+    font-size: 20px;
+  }
+
+  .question-box {
+    max-height: 300px;
+    /* Limit the height of the question box for better visibility */
+    /* overflow-y: auto; */
+    /* Add vertical scrollbar if needed */
+    padding: 20px;
+    /* Adjust padding for medium-sized screens */
+  }
+
+  .quiz-container {
+    max-width: 700px;
+    /* Adjust container width for tablets */
+  }
+}
+
+@media (min-width: 980px ){
+  .overview-panel{
+    max-width: 200px;
+    position:fixed;
+    top: 0;
+  }
+}
+
+/* Add a CSS class to handle the transition */
+.question-transition {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Initial state when the question is hidden */
+.question-hidden {
+  opacity: 0;
+  pointer-events: none; /* Prevent interactions with hidden question */
+}
+
+/* Apply the transition class to the question box */
+.question-box {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Add transition to other elements if needed */

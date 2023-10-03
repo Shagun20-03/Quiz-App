@@ -1,0 +1,104 @@
+/* EmailSubmission.css */
+body {
+    background-image: url('../img.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    /* background covers the entire viewport height */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Center the container vertically and horizontally */
+.email-submission-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* full viewport height */
+    margin-left: auto;
+    /* container to the right */
+    margin-right: 0;
+    /* Reset the margin on the right side */
+}
+
+/* Increase the container size and add background image */
+.email-submission-container.center-form {
+    width: 80%;
+    /* Adjust the width as needed */
+    max-width: 600px;
+    /* Set a maximum width to limit the size */
+    padding: 20px;
+    background-color: rgba(243, 239, 239, 0.858);
+    /* Background color with opacity */
+    background-size: cover;
+    /* Cover the entire container with the image */
+    background-position: center center;
+    /* Center the background image */
+    text-align: center;
+}
+
+/* Style for the email input field */
+.email-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for the submit button */
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the submit button */
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Center the submit button */
+.start-button {
+    margin: 0 auto;
+    display: block;
+}
+
+/* Style the input placeholder text */
+.email-input::placeholder {
+    font-style: italic;
+    color: #999;
+}
+
+/* Styles for screens smaller than 768px wide (e.g., smartphones) */
+@media (max-width: 768px) {
+    .email-submission-container.center-form {
+        width: 90%;
+        /* Adjust container width for smaller screens */
+    }
+
+    .email-input {
+        font-size: 16px;
+        /* Adjust font size for better readability */
+    }
+
+    .start-button {
+        font-size: 18px;
+        /* Adjust font size for better readability */
+    }
+}
+
+/* Styles for screens between 768px and 1200px wide (e.g., tablets) */
+@media (min-width: 768px) and (max-width: 1200px) {
+    .email-submission-container.center-form {
+        width: 70%;
+        /* Adjust container width for tablets */
+    }
+}
