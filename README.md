@@ -1,5 +1,3 @@
-
-https://github.com/Shagun20-03/quiz-app/assets/68726665/ced10b8a-87fe-4499-b688-35f37242814b
 # [Quiz Application](https://memory-nomads-quiz.netlify.app/)
 This is a simple quiz application built using React.js utilizing the Context API. The application uses [Open Trivia Database API](https://opentdb.com/api.php?amount=15) for quiz questions. Below is the information about the application.
 
